@@ -7,7 +7,7 @@ import Signup from './page/Signup.tsx'
 import    Blog from "./page/Blog.tsx"
 import Signin from './page/Signin.tsx'
 import BlogId from './page/BlogId.tsx'
-import PostBlog from './page/postBlog.tsx'
+import PostBlog from './page/PostBlog.tsx'
 const route = createBrowserRouter([{
   path:"/signup",
   element:<Signup/>

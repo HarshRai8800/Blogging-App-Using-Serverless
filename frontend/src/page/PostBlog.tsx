@@ -1,4 +1,4 @@
-import React from 'react';
+
 import axios from 'axios';
 import { Editor } from '@tinymce/tinymce-react';
 import { useNavigate } from 'react-router-dom';
@@ -7,9 +7,13 @@ import { useForm } from 'react-hook-form';
 function PostBlog() {
   const navigate = useNavigate();
 
-  const { register,setValue, handleSubmit, watch } = useForm();
-
-  const postBlog = async (data) => {
+  const { register,setValue, handleSubmit } = useForm<dat>();
+interface dat{
+  title:string,
+  description:string,
+  subject:string,
+}
+  const postBlog = async (data:dat) => {
     try {
       console.log('Submitting blog data:', data);
       const token = localStorage.getItem('token');

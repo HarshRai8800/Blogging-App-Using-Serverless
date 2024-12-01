@@ -1,6 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-function NavBar({name}) {
+interface dat{
+  name:string
+}
+function NavBar({name}:dat) {
   const navigate = useNavigate()
 return(
 

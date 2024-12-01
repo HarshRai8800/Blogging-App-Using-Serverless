@@ -1,12 +1,21 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function BlogId() {
     const { id } = useParams();
-    const [state, setState] = useState(null);
+    interface dat{
+      title:string,
+      description:string,
+      subject:string,
+      users:{
+        name:string,
+        email:string
+      }
+    }
+    const [state, setState] = useState<dat[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("");
 const navigate = useNavigate()
     useEffect(() => {
         const fetchBlog = async () => {
@@ -62,7 +71,7 @@ const navigate = useNavigate()
         <p className="text-base font-medium text-gray-700 mb-6">Description: {state[0]?.description || "No description available"}</p>
         <div className="text-sm text-gray-500">
           <p>ID: {id || "N/A"}</p>
-          <p>User Email: {state[0]?.user?.email || "No email provided"}</p>
+          <p>User Email: {state[0]?.users?.email || "No email provided"}</p>
         </div>
       </div>
     

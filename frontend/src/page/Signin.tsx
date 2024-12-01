@@ -22,6 +22,7 @@ function Signin() {
      if(res.data.msg=="done"){
       alert("signIn completed succesfully")
       localStorage.setItem("token",res.data.token)
+      localStorage.setItem("name",res.data.res.name)
       navigate("/blog")
      }
   }

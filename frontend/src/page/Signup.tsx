@@ -22,6 +22,7 @@ async function sigUp (){
    if(res.data.msg=="done"){
     alert("signUp completed succesfully")
     localStorage.setItem("token",res.data.token)
+    localStorage.setItem("name",res.data.res.name)
     navigate("/blog")
    }
 }

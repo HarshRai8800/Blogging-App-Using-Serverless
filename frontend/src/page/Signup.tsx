@@ -1,7 +1,7 @@
-import React from 'react'
+
 import Input from '../components/Input'
 import { useState } from 'react'
-import { data, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import axios from 'axios'
 function Signup() {
   const navigate = useNavigate()
